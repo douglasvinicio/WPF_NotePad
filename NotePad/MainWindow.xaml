@@ -1,0 +1,29 @@
+﻿<Window x:Class="NotePad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotePad"
+        mc:Ignorable="d"
+        Title="{Binding Path=MyTitle}" Height="450" Width="800">
+    <!-- Title="{Binding Path=MyTitle}"-->
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Name="miOpenFile" Click="miOpenFile_Click"></MenuItem>
+                <MenuItem Header="Save" Name="miSave" Click="miSave_Click"></MenuItem>
+                <MenuItem Header="Save as.." Name="miSaveFile" Click="miSaveFile_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Name="miExitApp" Click="miExitApp_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="No File to open" Name="tblStatus"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+        <!-- The last one occupies the entire space left-->
+        <TextBox AcceptsReturn="true" Name="txtValue" TextChanged="txtValue_TextChanged"></TextBox>
+    </DockPanel>
+</Window>
